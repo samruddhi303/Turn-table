@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 
-constorderSchema = new Schema({
+const orderSchema = new Schema({
     orderId: String,
     tableNumber: Number,
     userId: {
@@ -16,5 +16,8 @@ constorderSchema = new Schema({
 
         }
     ]
-    
 })
+const order = model('order', orderSchema);
+
+export default order;
+
