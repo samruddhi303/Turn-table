@@ -1,13 +1,13 @@
-import React, {UseState} from 'react'
+import React, {useState} from 'react'
 import axios from "axios"
 import  "./signup.css"
 
 function signup() {
-    const [name, setName] = UseState('')
-    const [email, setEmail] = UseState('')
-    const [phone, setPhone] = UseState('')
-    const [password, setPassword] = UseState('')// eslint-disable-next-line
-    const [role, setrole] = UseState('user')
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const [password, setPassword] = useState('')// eslint-disable-next-line
+    const [role, setrole] = useState('user')
     
     async function signupUser() {
      const Response = await axios.post('/Signup', {
