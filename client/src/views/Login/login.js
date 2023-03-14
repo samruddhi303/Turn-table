@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react'
+import { currentUser } from '../../util/currentUser'
 import axios from "axios"
 import  "./login.css"
 
@@ -8,7 +9,6 @@ function Login() {
     const [password, setPassword] = useState('')// eslint-disable-next-line
 
     useEffect(() => {
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'))
         if(!currentUser){
             window.location.href="/"
         }

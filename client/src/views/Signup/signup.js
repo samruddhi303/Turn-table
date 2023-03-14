@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { currentUser } from '../../util/currentUser'
 import axios from "axios"
 import "./signup.css"
 
@@ -10,7 +11,6 @@ function signup() {
     const [role, setrole] = useState('user')
 
     useEffect(() => {
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'))
         if(!currentUser){
             window.location.href="/"
         }
