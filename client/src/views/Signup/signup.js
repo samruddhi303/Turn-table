@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from "axios"
-import  "./signup.css"
+import "./signup.css"
 
 function signup() {
     const [name, setName] = useState('')
@@ -8,6 +8,13 @@ function signup() {
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')// eslint-disable-next-line
     const [role, setrole] = useState('user')
+
+    useEffect(() => {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+        if(!currentUser){
+            window.location.href="/"
+        }
+      }, [])
     
     async function signupUser() {
      const Response = await axios.post('/Signup', {
