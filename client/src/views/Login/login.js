@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import { currentUser } from '../../util/currentUser'
 import axios from "axios"
-import  "./login.css"
+import  "./Login.css"
 
 function Login() {
     
@@ -9,29 +9,29 @@ function Login() {
     const [password, setPassword] = useState('')// eslint-disable-next-line
 
     useEffect(() => {
-        if(!currentUser){
+        if(currentUser){
             window.location.href="/"
         }
       }, [])
     
     async function loginUser() {
-     const Response = await axios.post('/login', {
+     const response = await axios.post('/login', {
         email: email,
         password: password,
        
     })
-    console.log(Response.data)
-    if (Response.data.success){
-      alert(Response.data.message)
-      localStorage.setItem('currentUser', JSON.stringify(Response.data.data));
+    console.log(response.data)
+    if (response.data.success){
+      alert(response.data.message)
+      localStorage.setItem('currentUser', JSON.stringify(response.data.data));
       window.location.href="/"
 
     }
     else{
-        alert('Error: ' + Response.data.message)
+        alert('Error: ' + response.data.message)
         setEmail("")
         setPassword("")
-        localStorage.removeItem('currentUser', JSON.stringify(Response.data.data));
+        localStorage.removeItem('currentUser', JSON.stringify(response.data.data));
     }
 
 }
@@ -55,7 +55,7 @@ function Login() {
 
                             <div>
                             <label htmlFor='password'>Password: </label>
-                            <input type='text' className='form-control' id='password' placeholder='Enter Password'  value={password} onChange={(e) => setPassword(e.target.value)} /><br/>
+                            <input type='password' className='form-control' id='password' placeholder='Enter Password'  value={password} onChange={(e) => setPassword(e.target.value)} /><br/>
                            
                         </div>
                         <div>

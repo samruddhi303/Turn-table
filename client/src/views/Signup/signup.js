@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { currentUser } from '../../util/currentUser'
+import { currentUser } from './../../util/currentUser'
 import axios from "axios"
-import "./signup.css"
+import "./Signup.css"
 
-function signup() {
+function Signup() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -17,20 +17,20 @@ function signup() {
       }, [])
     
     async function signupUser() {
-     const Response = await axios.post('/Signup', {
+     const response = await axios.post('/Signup', {
         name: name,
         phone: phone,
         email: email,
         password: password,
         role: role
     })
-    console.log(Response.data)
-    if(Response.data.success){
-        alert(Response.data.message)
+    console.log(response.data)
+    if(response.data.success){
+        alert(response.data.message)
         window.location.href = '/login'
     }
     else{
-        alert(Response.data.message)
+        alert(response.data.message)
         setName('')
         setEmail('')
         setPhone('')
@@ -82,4 +82,4 @@ function signup() {
  
 }
 
-export default signup
+export default Signup
