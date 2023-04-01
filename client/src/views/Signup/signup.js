@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { currentUser } from './../../util/currentUser'
 import axios from "axios"
+import swal from 'sweetalert';
+import { currentUser } from './../../util/currentUser'
 import "./Signup.css"
 
 function Signup() {
@@ -11,26 +12,36 @@ function Signup() {
     const [role, setrole] = useState('user')
 
     useEffect(() => {
-        if(!currentUser){
+        if(currentUser){
             window.location.href="/"
         }
       }, [])
     
     async function signupUser() {
-     const response = await axios.post('/Signup', {
+     const response = await axios.post('/signup', {
         name: name,
-        phone: phone,
         email: email,
+        phone: phone,
         password: password,
         role: role
     })
     console.log(response.data)
     if(response.data.success){
-        alert(response.data.message)
+       await swal({
+            title: "Success",
+            text: response.data.message,
+            icon: "success",
+            button: "Aww yiss!",
+          });
         window.location.href = '/login'
     }
     else{
-        alert(response.data.message)
+        swal({
+            title: "Error",
+            text: response.data.message,
+            icon: "error",
+            button: "Try Again!",
+          });
         setName('')
         setEmail('')
         setPhone('')

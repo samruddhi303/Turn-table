@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
-import { currentUser } from '../../util/currentUser'
 import axios from "axios"
+import swal from 'sweetalert';
+import { currentUser } from '../../util/currentUser'
 import  "./Login.css"
 
 function Login() {
