@@ -160,6 +160,17 @@ app.get("/fooditems", async (req, res) => {
     })
 })
 
+app.get("/allfooditems", async (req, res) => {
+     const fooditems = await FoodItem.find()
+     
+    res.json({
+        success: true,
+        message: "Food Items fetched successfully",
+        data: fooditems
+
+    })
+})
+
 app.post("/createTable", async (req, res) => {
     const { tableNumber } = req.body;
 
