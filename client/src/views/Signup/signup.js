@@ -27,7 +27,7 @@ function Signup() {
     })
     console.log(response.data)
     if(response.data.success){
-       await swal({
+        await swal({
             title: "Success",
             text: response.data.message,
             icon: "success",
