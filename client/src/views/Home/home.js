@@ -5,10 +5,12 @@ import './Home.css'
 import FoodItemCard from '../../components/FoodItemCard/FoodItemCard';
 import { currentUser } from '../../util/currentUser';
 import { loginRequired } from "../../util/loginRequired";
+import Navbar from '../../components/Navbar/Navbar';
 
 
 
 function Home() {
+
   
   const [searchText, setSearchText] = useState('')
   const [currentFoodItems, setAllFoodItems] = useState([])
@@ -58,8 +60,10 @@ function Home() {
 
   return (
        <div>
-        <h1 className='text-center'>Home</h1>
-        <h2>{currentUser?.name}</h2>
+        <Navbar user={currentUser?.name}/>
+        {/* <h1 className='text-center'>Home</h1>
+        <h2>{currentUser?.name}</h2> */}
+
         <div className='search-container'>
           <input type = "text" placeholder='Search' className='input-search'
           value={searchText}
@@ -81,6 +85,7 @@ function Home() {
         <button type="button" className='btn btn-primary' onClick= {logOut} >Logout</button>
 
        </div>
+       
   ) 
 }
 export default Home
