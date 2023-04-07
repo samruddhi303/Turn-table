@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+
 import './Home.css'
 import FoodItemCard from '../../components/FoodItemCard/FoodItemCard';
-import { currentUser } from './../../util/currentUser.js'
+import { currentUser } from '../../util/currentUser';
+import { loginRequired } from "../../util/loginRequired";
 
 
 
@@ -10,6 +12,7 @@ function Home() {
   
   const [searchText, setSearchText] = useState('')
   const [currentFoodItems, setAllFoodItems] = useState([])
+
 
   async function fetchAllItems(){
     console.log('fetching all items')
@@ -45,9 +48,13 @@ function Home() {
      window.location.href = '/login'
   }
 
-  if(!currentUser){
-    window.location.href = '/login'
-  }
+ 
+ useEffect(()=>{
+ 
+    loginRequired()
+  
+ }, [])
+
 
   return (
        <div>
