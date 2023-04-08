@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css"
 
 
-function Navbar({user}) {
+function Navbar({user, foodItemCount}) {
     return (
         <div>
             <div class="bg-img">
@@ -12,12 +12,19 @@ function Navbar({user}) {
                         <a href="#news">News</a>
                         <a href="#contact">Contact</a>
                         <a href="#about">About</a>
-                      
+                    
                     
                     </div>
-                    <h3>Hello {user}</h3>
+                    <div className="endnav">
+                    <h3>Hello!! {user}</h3>
+                    </div>
+                     <div className="mylist">
+                        <h3>🍽️{foodItemCount}</h3>
+
+                    </div>
+                   
                 </div>
-                <h1 className="name">Radhika <i>foofstuffs</i></h1>
+                <h1 className="name">Radhika <i>foodstuff's</i></h1>
             </div>
 
         </div>

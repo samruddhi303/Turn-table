@@ -19,21 +19,30 @@
   /* Position the navbar container inside the image */
   .container {
     position: absolute;
+    display: flex;
+    justify-content: flex-end;
     margin: 20px;
-    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+  
+   
+   
   }
   
   /* The navbar */
   .topnav {
     overflow: hidden;
-    background-color: #333;
-    width: 600px;
+    background-color:white;
+    color: black;
+    width: 1600px;
+    height: 50px;
+   
   }
   
   /* Navbar links */
   .topnav a {
     float: left;
-    color: #f2f2f2;
+    color:black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -48,5 +57,20 @@
     padding-top: 100px;
     text-align: center;
     font-size: 65px;
+  
+  }
+  .endnav{
+    background-color:white;
+    width: 350px;
+    height: 50px;
+  
+    color:black;
+  }
+  .mylist{
+    background-color:white;
+    width: 250px;
+    height: 50px;
+   
+    color:black;
   
   }
