@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
+import { myFoodListCount } from '../../util/MyList';
+import {Link} from 'react-router-dom'
 import "./Navbar.css"
 
 
-function Navbar({user, foodItemCount}) {
+function Navbar({user}) {
+    const [foodItemCount, setFoodItemCount] = useState(myFoodListCount)
     return (
         <div>
             <div class="bg-img">
@@ -19,7 +22,9 @@ function Navbar({user, foodItemCount}) {
                     <h3>Hello!! {user}</h3>
                     </div>
                      <div className="mylist">
+                        <Link to="/myList" className='text-decoration-none'>
                         <h3>🍽️{foodItemCount}</h3>
+                        </Link>
 
                     </div>
                    

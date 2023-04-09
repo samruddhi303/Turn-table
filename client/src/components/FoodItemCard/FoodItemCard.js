@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import './FoodItemCard.css'
+import swal from "sweetalert"
 
 function FoodItemCard({category, description, imgUrl, price, title}) {
     const[quantity,setquantity] = useState(1)
@@ -15,6 +16,12 @@ function FoodItemCard({category, description, imgUrl, price, title}) {
            existingList.push(listObject)
             
            localStorage.setItem('list', JSON.stringify(existingList))
+           await swal({
+            title: "Added To list",
+            icon: "success"
+
+           })
+           window.location.reload()
 
     }
     return (

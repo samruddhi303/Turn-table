@@ -6,7 +6,7 @@ import FoodItemCard from '../../components/FoodItemCard/FoodItemCard';
 import { currentUser } from '../../util/currentUser';
 import { loginRequired } from "../../util/loginRequired";
 import Navbar from '../../components/Navbar/Navbar';
-import { myFoodListCount } from '../../util/MyList';
+
 
 
 
@@ -15,7 +15,7 @@ function Home() {
   
   const [searchText, setSearchText] = useState('')
   const [currentFoodItems, setAllFoodItems] = useState([])
-  const [foodItemCount, setFoodItemCount] = useState(myFoodListCount)
+ 
 
 
   async function fetchAllItems(){
@@ -62,7 +62,7 @@ function Home() {
 
   return (
        <div>
-        <Navbar user={currentUser?.name} foodItemCount={foodItemCount}/>
+        <Navbar user={currentUser?.name}/>
         {/* <h1 className='text-center'>Home</h1>
         <h2>{currentUser?.name}</h2> */}
 
