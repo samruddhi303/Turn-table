@@ -2,13 +2,15 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
+import path from 'path';
+const __dirname = path.resolve();
 
 import User from './models/User.js';
 import FoodItem from './models/fooditem.js';
 import Table from './models/table.js';
 import Order from './models/order.js';
 
-const app = express();
+const app = express();  //middleware
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
@@ -294,6 +296,12 @@ app.get("/ordersByUserId", async (req, res) => {
     })
 });
 //api routes end here
+//send request to frontend
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+});
 
 
 app.listen(5000, () => {

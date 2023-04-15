@@ -17,6 +17,8 @@ function MyList() {
         })
        if (responce.data.success){
         await swal("Order placed", responce.data.message, "success")
+        localStorage.removeItem("list")
+        window.location.href = "/"
        }
     }
     return (
