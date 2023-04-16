@@ -1,26 +1,34 @@
-import React, {useEffect} from "react"; 
+import React, { useEffect } from "react";
 
-import  "./BookTable.css"
+import "./BookTable.css"
 
 import { loginRequired } from "../../util/loginRequired";
 
 function BookTable() {
-    
 
-   
-      
-       useEffect(()=>{
-       {
-          loginRequired()
+
+
+
+    useEffect(() => {
+        {
+            loginRequired()
         }
-       }, [])
-      
+    }, [])
+
 
 
 
     return (
         <div>
-       <h1>BookTable</h1>
+            <div className="container">
+                
+                   <div className="Tables"></div>
+                   <div className="Tables"></div>
+                   <div className="Tables"></div>
+                   
+
+               </div>
+         
         </div>
     )
 }
