@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./BookTable.css"
 import TableCard from '../../components/TableCard/TableCard';
-// import Navbar from '../../components/Navbar/Navbar';
-// import { currentUser } from '../../util/currentUser';
+import Navbar from '../../components/Navbar/Navbar';
+import { currentUser } from '../../util/currentUser';
 
 import { loginRequired } from '../../util/loginRequired';
 
@@ -25,13 +25,13 @@ function BookTable() {
   return (
     
       <div className=''>
-        {/* <Navbar user={currentUser?.name}/> */}
+        <Navbar user={currentUser?.name}/>
        <div className='title-container' >
            Book Table 
        </div>
         <div className=' conatiner row '>
           <hr />
-          <div className='conatiner-title'>Available Tables</div>
+          <div className='conatiner-title'><i>Available Tables</i></div>
           <hr />
         {
           currentTable?.map((tableItem, index) => {

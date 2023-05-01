@@ -11,10 +11,10 @@ function Navbar({user}) {
             <div class="bg-img">
                 <div class="container">
                     <div class="topnav">
-                        <a href="#home">Home</a>
-                        <a href="#news">News</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#about">About</a>
+                        <a href="/"><b>Home</b></a>
+                        <a href="MyList"><b>MyList</b></a>
+                        <a href="MyProfile"><b>MyProfile</b></a>
+                        <a href="BookTable"><b>BookTable</b></a>
                     
                     
                     </div>

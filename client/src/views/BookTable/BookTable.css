@@ -1,4 +1,51 @@
+.title-container{
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 4px;
+    box-shadow: 0px 0px 0.5px 1px #808080;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: coral;
+}
+.title-container:hover{
+   background-color: white;
+}
+.conatiner{
+    height: 300px;
+    width: 390px;
+    padding: 20px;
+    border: 0.1px inset black;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color:orange;
+}
+.conatiner:hover{
+    box-shadow: 3px 4px 1px 1.2px #808080;
+}
+.conatiner-title{
+   text-align: center;
+   font-size: 28px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   margin-bottom: 7px;
+}
 
+.cont-img{
+    height: 100px;
+    width: 100px;
+}
+
+
+
+
+
+
+/* 
 .container{
     height: 350px;
 
@@ -11,7 +58,7 @@
     border-radius: 10px;
    
 }
-/* .table-container{
+ .table-container{
    height: 300px;
    display: flex;
    justify-content: space-between;
@@ -19,20 +66,20 @@
   
    
 
-} */
+} 
 .Tables{
     background-image: url(https://tse1.mm.bing.net/th?id=OIP.sdCefo2Y74KqDqs9zzk6CgHaE8&pid=Api&P=0) ;
    
     height: 200px;
     width: 250px;
    
-/*     
+    
     display: inline-block;
     align-content: center; */
    
 
 
-    
+/*   
 }
 .Tables:hover{
    box-shadow: 2px 3px 2px 3px rgba(0, 0,0,0.2);
@@ -72,4 +119,4 @@ border: 1px inset white;
 }
 .btn-confirm:hover{
     box-shadow:2px 2px 2px 3px rgba(0, 0, 0, 0.3) ;
-}
+}  */ 
