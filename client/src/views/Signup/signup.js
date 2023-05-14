@@ -50,10 +50,12 @@ function Signup() {
 }
   return (
        <div>
-        <h1 className='text-center'>Signup</h1>
+        <h1 className='text-center'>Radhika Foodstuff</h1>
         <div className='row'>
             <div className='col-md-6'>
-
+                <div className='welcome-cont'>
+                <h3>Hey...<i>WELCOME !!🧡🍽️</i><br/>if you want to join with us ,Please Signup👉</h3>
+                </div>
             </div>
             <div className='col-md-6'>
                 <div className='form-container'>
@@ -85,6 +87,10 @@ function Signup() {
                         </div>
                         </div>
                     </form>
+                    <p className='Not-remember'>
+                       Already a member?
+                        <a href="login">Login</a>
+                    </p>
                 </div>
             </div>
         </div>

@@ -51,7 +51,9 @@ function Login() {
         <h1 className='text-center'>Login</h1>
         <div className='row'>
             <div className='col-md-6'>
-
+              
+            <img src='https://www.shutterstock.com/image-illustration/3d-rendered-illustration-kitchen-chef-600w-103833140.jpg'></img>
+            
             </div>
             <div className='col-md-6'>
                 <div className='form-container'>
@@ -74,6 +76,10 @@ function Login() {
                         </div>
                         </div>
                     </form>
+                    <p className='Not-remember'>
+                        Not a member?
+                        <a href="signup">Signup Now</a>
+                    </p>
                 </div>
             </div>
         </div>
