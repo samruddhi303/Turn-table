@@ -5,6 +5,7 @@
     width: 300px;
     border-radius: 5px;
     box-shadow: 0 0 5px #808080;
+    background-color: orange;
 }
 
 .food-item-card-header-img{
@@ -15,7 +16,14 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid black;
+    border-radius: 10px;
 
+}
+.food-item-card-header-img:hover{
+    width: 230px;
+    height: 210px;
+    box-shadow: 0 0 2px 5px darkorange;
 }
 .btn-add-to-list{
     display: block;

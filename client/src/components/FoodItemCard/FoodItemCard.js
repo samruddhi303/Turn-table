@@ -3,7 +3,7 @@ import './FoodItemCard.css'
 import swal from "sweetalert"
 
 function FoodItemCard({category, description, imgUrl, price, title}) {
-    const[quantity,setquantity] = useState(1)
+    const[quantity,setQuantity] = useState(1)
     async function addToList(){
         const listObject = {
             name: title,
@@ -17,11 +17,11 @@ function FoodItemCard({category, description, imgUrl, price, title}) {
             
            localStorage.setItem('list', JSON.stringify(existingList))
            await swal({
-            title: "Added To list",
+            title: "Item added to list",
             icon: "success"
 
            })
-           window.location.reload()
+          window.location.reload()
 
     }
     return (
@@ -37,9 +37,9 @@ function FoodItemCard({category, description, imgUrl, price, title}) {
 
                 
                 <div className="quantity-btn-container">
-                    <span className="qnt-btn" onClick={(e)=>{setquantity(quantity-1)}}>-</span>
+                    <span className="qnt-btn" onClick={(e)=>{setQuantity(quantity-1)}}>-</span>
                     <span className="qnt-text">{quantity}</span>
-                    <span className="qnt-btn" onClick={(e)=>{setquantity(quantity+1)}}>+</span>
+                    <span className="qnt-btn" onClick={(e)=>{setQuantity(quantity+1)}}>+</span>
                 </div>
                 <div>
                     <button type="Button" className="btn-add-to-list" onClick={addToList}>Add to list</button>
